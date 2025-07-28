@@ -18,7 +18,11 @@ const LoginPage = () => {
 
   const userLogin = async() => {
     try{
-      const result = await axios.post( SRP_URL  + `srp/loginUser?userName=${form.userName}&password=${form.password}`,{});
+      let data = {
+        userName:form.userName,
+        password:form.password
+      }
+      const result = await axios.post( SRP_URL  + `srp/loginUser`,data);
         if(result.data){
             sessionStorage.setItem("USER_DATA",JSON.stringify(result.data))
             sessionStorage.setItem("TOKEN",true)
