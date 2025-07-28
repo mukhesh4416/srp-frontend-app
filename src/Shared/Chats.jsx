@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { SRP_URL } from '../global';
+import { SRP_URL, WEBSOKET_URL } from '../global';
 import axios from 'axios';
 import { InputTextarea } from 'primereact/inputtextarea';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -47,8 +47,7 @@ function Chats({refId,chatVisible,setChatVisible}){
 
     useEffect(()=>{
 
-        ws.current = new WebSocket('ws://localhost:8080/ws/chat');
-        // ws.current = new WebSocket('ws://192.168.77.247:8080/ws/chat');
+        ws.current = new WebSocket(WEBSOKET_URL + "ws/chat");
 
         ws.current.onopen = () => {
             ws.current.send(JSON.stringify({
