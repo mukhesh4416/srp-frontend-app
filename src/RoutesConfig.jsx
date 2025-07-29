@@ -7,6 +7,7 @@ import ProjectRegistration from './SRP/ProjectRegistration';
 import Tasks from './SRP/Tasks';
 import Bugs from './SRP/Bugs';
 import UserRegistration from './SRP/UserRegistration';
+import TaskBugTracker from './SRP/dragCmp/TaskBugTracker';
 
 const RoutesConfig = () => (
     <Routes>
@@ -20,6 +21,7 @@ const RoutesConfig = () => (
             <Route path="bugs" element={<Bugs/>} />
             <Route path="projects" element={<ProjectRegistration/>} />
             <Route path="user-registration" element={<UserRegistration/>} />
+            <Route path="pending" element={<TaskBugTracker/>} />
         </Route>
     </Routes>
 )

@@ -47,7 +47,7 @@ function Chats({refId,chatVisible,setChatVisible}){
 
     useEffect(()=>{
 
-        ws.current = new WebSocket(WEBSOKET_URL + "ws/chat");
+        ws.current = new WebSocket(WEBSOKET_URL);
 
         ws.current.onopen = () => {
             ws.current.send(JSON.stringify({

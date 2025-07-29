@@ -5,6 +5,7 @@ import 'bootstrap/dist/js/bootstrap.bundle';
 import ToastMessage from './Shared/ToastMessage';
 import { HashRouter } from 'react-router-dom';
 import RoutesConfig from './RoutesConfig';
+import 'react-mosaic-component/react-mosaic-component.css';
 
 function App() {
 

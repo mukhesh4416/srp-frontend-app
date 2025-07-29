@@ -34,6 +34,9 @@ export default function MenuHeader() {
                             <li className="nav-item">
                                 <Link to="/srp/bugs" className={`nav-link ${location.pathname === "/srp/bugs" ?'active':''}`} >Bugs</Link>
                             </li>
+                            <li className="nav-item">
+                                <Link to="/srp/pending" className={`nav-link ${location.pathname === "/srp/pending" ?'active':''}`} >Penidng</Link>
+                            </li>
                         <li className="nav-item dropdown" key="con">
                                 <Link to="#" className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <span>Configuration</span>

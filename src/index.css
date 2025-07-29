@@ -593,3 +593,73 @@ body .p-dropdown:not(.p-disabled).p-focus {
   background: #153e4a;
 }
 /* ScrollBar Ends */
+
+
+/* Draggable CSS */
+.draggable {
+  z-index: 1000;
+  user-select: none;
+}
+
+.mosaic-window-toolbar,.mosaic-window-body{
+background: #031b22 !important;
+}
+
+.mosaic.mosaic-blueprint-theme{
+  background: #006987 !important;
+}
+
+.mosaic-window .mosaic-window-toolbar{
+  display: none !important;
+}
+/* Draggable CSS End*/
+
+/* Tab Pannels Start*/
+.p-tabview-nav{
+  background: #093c4c !important;
+}
+
+.p-tabview-panels{
+  background: #031b22 !important; 
+  padding: 0px !important;
+}
+
+.p-tabview-nav-link{
+    background-color: #093c4c;
+    color: #e1e4e5;
+    padding: 11px 9px;
+    border: none;
+    margin: 2px;
+    border: 1px solid #0186ac;
+}
+
+a{
+  text-decoration: none !important;
+}
+
+.p-tabview .p-tabview-nav{
+  border-bottom: 2px solid #006784;
+}
+
+.p-unselectable-text.p-tabview-selected.p-highlight a{
+  background-color: #376b7b !important;
+}
+
+/* Tab Pannels End*/
+
+/* Accordian Starts */
+.p-accordion-header a{
+  background: #376b7b;
+  border: 0px;
+  color: #e1e4e5;
+}
+
+.p-accordion-content{
+    background: #154554;
+    border: 0px;
+}
+
+.p-accordion-tab{
+  padding-bottom: 4px;
+}
+/* Accordian Ends */

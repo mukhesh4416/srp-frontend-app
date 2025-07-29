@@ -38,30 +38,34 @@ const LoginPage = () => {
 
   return (
     <div className="login-container">
-      <form className="login-card">
-        <div className='logo'>SRP</div>
-        <p>Please login to your account</p>
-        <input
-          type="text"
-          name="userName"
-          placeholder="User Name"
-          value={form.userName}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={form.password}
-          onChange={handleChange}
-          required
-        />
-        <div className="login-footer">
-          <button type="button" className='mb-2' onClick={userLogin}>Login</button>
-          <span style={{color:'#666'}}>Don't have an account?</span> <a href="#">Sign Up</a>
+      <div className="row justify-content-center w-100">
+        <div className="col-lg-4 col-md-6 col-sm-8 col-12">
+          <form className="login-card">
+            <div className='logo'>SRP</div>
+            <p>Please login to your account</p>
+            <input
+              type="text"
+              name="userName"
+              placeholder="User Name"
+              value={form.userName}
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              value={form.password}
+              onChange={handleChange}
+              required
+            />
+            <div className="login-footer">
+              <button type="button" className='mb-2' onClick={userLogin}>Login</button>
+              <span style={{color:'#666'}}>Don't have an account?</span> <a href="#">Sign Up</a>
+            </div>
+          </form>
         </div>
-      </form>
+      </div>
     </div>
   );
 };
