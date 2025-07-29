@@ -1,6 +1,5 @@
 import { TabPanel, TabView } from 'primereact/tabview'
 import React from 'react'
-import Chats from '../../Shared/Chats'
 import DragAttachment from './DragAttachment';
 import DragChat from './DragChat';
 
@@ -18,8 +17,7 @@ function BoxTwo({rowData}) {
                     <DragAttachment refId={rowData?.type ===  "Bug"?rowData?.data?.bugId:rowData?.data?.taskId}/>
                 </TabPanel>
                 <TabPanel header="Chat" key={key + '-chat'}>
-                    {rowData?.type ===  "Bug" && <DragChat refId={rowData?.data?.bugId}/>}
-                    {rowData?.type !==  "Bug" && <DragChat refId={rowData?.data?.taskId}/>}
+                    {rowData?.type ===  "Bug" && <DragChat refId={rowData?.data?.bugId} type={"Bug"}/>}
                 </TabPanel>
             </TabView>
       </div>

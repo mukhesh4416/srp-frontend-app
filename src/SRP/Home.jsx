@@ -463,7 +463,7 @@ function Home() {
           <Attachments refId={attachId}/>
         </div>   
       </Dialog>}
-        {chatVisible && <Chats refId={chatId} chatVisible={chatVisible} setChatVisible={setChatVisible}/>}
+        {chatVisible && <Chats refId={chatId} chatVisible={chatVisible} setChatVisible={setChatVisible} type={"Bug"}/>}
         <ConfirmDialog />
       </div>
     </div>

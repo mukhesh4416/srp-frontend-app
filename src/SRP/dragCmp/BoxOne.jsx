@@ -70,18 +70,21 @@ function BoxOne({setRowData}) {
         </button>
       </div>
       <div className=''>
-        <TreeTable value={nodes} tableStyle={{ minWidth: '50rem'}} frozenWidth="200px"  frozenRightWidth="120px"  scrollable scrollHeight="250px" 
+        <TreeTable value={nodes}
         // paginator rows={5} rowsPerPageOptions={[5, 10, 25]} 
+          resizableColumns 
+          scrollable
+          scrollHeight="250px"
+          frozenWidth="200px"
+          frozenRightWidth="120px"
           style={{ width: '100%' }}
-          breakpoints={{
-            '960px': '75vw',
-            '641px': '100vw'
-          }}
         >
             {columns.map((col, i) => (
-                <Column key={col.field} style={{ width: '250px' }} field={col.field} header={col.header} frozen={col.frozen} expander={col.expander} body={col?.body}/>
+                <Column key={col.field} style={{ width: '250px', height: '43px' }} field={col.field} 
+                header={col.header} frozen={col.frozen} expander={col.expander} body={col?.body}
+                columnKey={col.header + i}/>
             ))}
-            <Column body={actionTemplate} header="Action" frozen frozenOnEnd style={{ width: '120px' }} />
+            <Column body={actionTemplate} header="Action"  style={{ width: '250px', height: '30px' }}/>
         </TreeTable>
       </div>
     </div>

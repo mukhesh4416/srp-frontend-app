@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperPlane, faReply } from '@fortawesome/free-solid-svg-icons';
 import { Dialog } from 'primereact/dialog';
 
-function Chats({refId,chatVisible,setChatVisible}){
+function Chats({refId,chatVisible,setChatVisible,type}){
 
     const userData = JSON.parse(sessionStorage.getItem("USER_DATA"))
     const [chatList,setChatList] = useState([]);
@@ -20,6 +20,7 @@ function Chats({refId,chatVisible,setChatVisible}){
         refId:refId,
         message:chatMsg,
         createdId:userData.uId,
+        type:type,
       }
         axios.post(SRP_URL+`srp/saveChatMessage`,data).then(()=>{
             setChatMsg("")
@@ -30,7 +31,7 @@ function Chats({refId,chatVisible,setChatVisible}){
     }
 
     const getAllChatData = async()=>{
-        const res = await axios.get(SRP_URL + `srp/getChatList?refId=${refId}`)
+        const res = await axios.get(SRP_URL + `srp/getChatList?refId=${refId}&type=${type}`)
         if(res.data)
         setChatList(res.data)
     }

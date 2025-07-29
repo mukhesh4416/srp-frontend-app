@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperPlane } from '@fortawesome/free-regular-svg-icons';
 import { Dialog } from 'primereact/dialog';
 
-function DragChat({refId}){
+function DragChat({refId,type}){
 
     const userData = JSON.parse(sessionStorage.getItem("USER_DATA"))
     const [chatList,setChatList] = useState([]);
@@ -20,6 +20,7 @@ function DragChat({refId}){
         refId:refId,
         message:chatMsg,
         createdId:userData.uId,
+        type:type
       }
         axios.post(SRP_URL+`srp/saveChatMessage`,data).then(()=>{
             setChatMsg("")
@@ -30,7 +31,7 @@ function DragChat({refId}){
     }
 
     const getAllChatData = async()=>{
-        const res = await axios.get(SRP_URL + `srp/getChatList?refId=${refId}`)
+        const res = await axios.get(SRP_URL + `srp/getChatList?refId=${refId}&type=${type}`)
         if(res.data)
         setChatList(res.data)
     }
